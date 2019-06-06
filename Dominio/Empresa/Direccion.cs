@@ -13,14 +13,13 @@ namespace Dominio
         public int NroCalle { get; set; }
         public int Piso { get; set; }
         public string Departamento { get; set; }
-        public Localidad Localidad { get; set; }
-        public Provincia Provincia { get; set; }
-        public Pais Pais { get; set; }
-
+        public string Localidad { get; set; }
+        //public Provincia Provincia { get; set; }
+        //public Pais Pais { get; set; }
 
         public override string ToString()
         {
-            return Calle + "("+ Localidad.Descripcion + ")" ;
+            return Calle + ", " + NroCalle.ToString() + ", " + Piso.ToString() + ", " + Departamento + ", " + Localidad;
         }
     }
 }

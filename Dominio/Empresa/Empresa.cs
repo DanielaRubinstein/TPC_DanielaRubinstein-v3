@@ -18,7 +18,6 @@ namespace Dominio
         {
             this.Direccion = new Direccion();
         }
-
         //public Empresa(int id)
         //{
         //    IdEmpresa = id;
@@ -33,12 +32,8 @@ namespace Dominio
 
         public override string ToString()
         {
-            if (Direccion.IdDireccion > -1)
-                return IdEmpresa + "," + CUIL + "," + RazonSocial + "(" + Direccion.NroCalle.ToString() + ")" + "(" +
-                    Direccion.Piso.ToString() + ")" + Direccion.Localidad.Descripcion + "," + Direccion.Provincia.Descripcion + "," + Direccion.Pais.Descripcion;
-            else return "";
+          return IdEmpresa + "," + CUIL + "," + RazonSocial + "(" + Direccion.NroCalle.ToString() + ")" + "(" +
+          Direccion.Piso.ToString() + ")" + Direccion.Localidad;
         }
-
-
     }
 }

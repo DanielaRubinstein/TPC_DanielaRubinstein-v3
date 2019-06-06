@@ -22,7 +22,7 @@ namespace Negocio
         {
             comando = new SqlCommand();
 
-            conexion = new SqlConnection(@"initial catalog=DB_TPC_Rubinstein;data source=DESKTOP-3LK2VR8\SQLEXPRESS;integrated security=sspi");
+            conexion = new SqlConnection(@"initial catalog=DB_TPC_Rubinstein;data source=DESKTOP-3LK2VR8\\SQLEXPRESS;integrated security=sspi");
             comando.Connection = conexion;
         }
 

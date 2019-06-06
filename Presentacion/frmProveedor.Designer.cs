@@ -39,7 +39,6 @@
             this.txtbPiso = new System.Windows.Forms.TextBox();
             this.txtbNro = new System.Windows.Forms.TextBox();
             this.txtbCalle = new System.Windows.Forms.TextBox();
-            this.cmboxLocalidad = new System.Windows.Forms.ComboBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.cmboxProvincia = new System.Windows.Forms.ComboBox();
             this.lblProvincia = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtBoxLocalidad = new System.Windows.Forms.TextBox();
             this.gbContacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContacto)).BeginInit();
             this.gbDireccion.SuspendLayout();
@@ -116,11 +116,11 @@
             // 
             // gbDireccion
             // 
+            this.gbDireccion.Controls.Add(this.txtBoxLocalidad);
             this.gbDireccion.Controls.Add(this.txtbDpto);
             this.gbDireccion.Controls.Add(this.txtbPiso);
             this.gbDireccion.Controls.Add(this.txtbNro);
             this.gbDireccion.Controls.Add(this.txtbCalle);
-            this.gbDireccion.Controls.Add(this.cmboxLocalidad);
             this.gbDireccion.Controls.Add(this.lblLocalidad);
             this.gbDireccion.Controls.Add(this.cmboxProvincia);
             this.gbDireccion.Controls.Add(this.lblProvincia);
@@ -166,15 +166,6 @@
             this.txtbCalle.Size = new System.Drawing.Size(383, 40);
             this.txtbCalle.TabIndex = 13;
             // 
-            // cmboxLocalidad
-            // 
-            this.cmboxLocalidad.FormattingEnabled = true;
-            this.cmboxLocalidad.Location = new System.Drawing.Point(164, 173);
-            this.cmboxLocalidad.Name = "cmboxLocalidad";
-            this.cmboxLocalidad.Size = new System.Drawing.Size(383, 41);
-            this.cmboxLocalidad.TabIndex = 12;
-            this.cmboxLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmboxLocalidad_SelectedIndexChanged);
-            // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
@@ -192,6 +183,7 @@
             this.cmboxProvincia.Name = "cmboxProvincia";
             this.cmboxProvincia.Size = new System.Drawing.Size(383, 41);
             this.cmboxProvincia.TabIndex = 10;
+            this.cmboxProvincia.Visible = false;
             // 
             // lblProvincia
             // 
@@ -202,6 +194,7 @@
             this.lblProvincia.Size = new System.Drawing.Size(131, 36);
             this.lblProvincia.TabIndex = 9;
             this.lblProvincia.Text = "Provincia:";
+            this.lblProvincia.Visible = false;
             // 
             // cmboxPais
             // 
@@ -210,6 +203,7 @@
             this.cmboxPais.Name = "cmboxPais";
             this.cmboxPais.Size = new System.Drawing.Size(383, 41);
             this.cmboxPais.TabIndex = 8;
+            this.cmboxPais.Visible = false;
             // 
             // lblPais
             // 
@@ -220,6 +214,7 @@
             this.lblPais.Size = new System.Drawing.Size(69, 36);
             this.lblPais.TabIndex = 7;
             this.lblPais.Text = "Pais:";
+            this.lblPais.Visible = false;
             // 
             // lblDepartamento
             // 
@@ -318,7 +313,13 @@
             this.btnAgregar.TabIndex = 25;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtBoxLocalidad
+            // 
+            this.txtBoxLocalidad.Location = new System.Drawing.Point(164, 176);
+            this.txtBoxLocalidad.Name = "txtBoxLocalidad";
+            this.txtBoxLocalidad.Size = new System.Drawing.Size(383, 40);
+            this.txtBoxLocalidad.TabIndex = 17;
             // 
             // frmProveedor
             // 
@@ -359,7 +360,6 @@
         private System.Windows.Forms.TextBox txtbPiso;
         private System.Windows.Forms.TextBox txtbNro;
         private System.Windows.Forms.TextBox txtbCalle;
-        private System.Windows.Forms.ComboBox cmboxLocalidad;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.ComboBox cmboxProvincia;
         private System.Windows.Forms.Label lblProvincia;
@@ -375,5 +375,6 @@
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtBoxLocalidad;
     }
 }
