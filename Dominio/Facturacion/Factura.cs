@@ -12,7 +12,7 @@ namespace Dominio
         //public string TipoFactura { get; set; }
         public DateTime Fecha { get; set; }
         public Empresa Empresa {get;set;}
-       // public Impuesto Impuesto { get; set; } 
+        public int Impuesto { get; set; } 
         public string CondicionVenta { get; set; }
         public List<DetalleFactura> DetalleFactura { get; set; }
         public int Descuento { get; set; } //En el detalle o factura?

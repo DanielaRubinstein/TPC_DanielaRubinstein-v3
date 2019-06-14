@@ -15,7 +15,7 @@ namespace Presentacion
     public partial class frmListaProveedor : Form
     {
         //private Proveedor proveedor;
-        private List<Proveedor> proveedorListado;
+        //private List<Proveedor> proveedorListado;
 
 
         public frmListaProveedor()
@@ -27,28 +27,18 @@ namespace Presentacion
         {
             frmProveedor formularioProveedor = new frmProveedor();
             formularioProveedor.ShowDialog();
+            cargarGrilla();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmListaProveedor_Load(object sender, EventArgs e)
-        {
-            //ProveedorNegocio proveedor = new ProveedorNegocio();
-            cargarGrilla(); 
-        }
 
         private void cargarGrilla()
         {
-
             ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
             try
             {
-
-                proveedorListado = proveedorNegocio.listar();
-                dgvProveedor.DataSource = proveedorListado;
+                //proveedorListado = proveedorNegocio.listar();
+                dgvProveedor.DataSource = proveedorNegocio.listar();
+                dgvProveedor.Refresh();
                 //dgvProveedor.Columns[0].Visible = true;
                 //this.proveedorListado = proveedorNegocio.listar();
                 //dgvProveedor.DataSource = proveedor.listar();
@@ -57,6 +47,25 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+        private void frmListaProveedor_Load(object sender, EventArgs e)
+        {
+            //ProveedorNegocio proveedor = new ProveedorNegocio();
+            cargarGrilla();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmProveedor proveedorModificar = new frmProveedor((Proveedor)dgvProveedor.CurrentRow.DataBoundItem);
+                proveedorModificar.ShowDialog();
+                cargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

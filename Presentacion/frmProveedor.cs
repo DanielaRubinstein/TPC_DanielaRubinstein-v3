@@ -15,18 +15,24 @@ namespace Presentacion
     public partial class frmProveedor : Form
     {
 
-        private Proveedor proveedor;
-        private List<Contacto> contactoListado;
+        private Proveedor proveedor=null;
+        //private List<Contacto> contactoListado;
         public frmProveedor()
         {
             InitializeComponent();
         }
 
-        public frmProveedor(Proveedor proveedor)
+        public frmProveedor(Proveedor prov)
         {
             InitializeComponent();
-            this.proveedor = proveedor;
+            prov = proveedor;
         }
+
+        //public frmProveedor(Proveedor proveedor)
+        //{
+        //    InitializeComponent();
+        //    this.proveedor = proveedor;
+        //}
 
         private void frmProveedor_Load(Object Sender,EventArgs e)
         {
@@ -34,26 +40,28 @@ namespace Presentacion
             
             
         }
-        private void cargarGrilla()
-        {
+        //private void cargarGrilla()
+        //{
            
-            ContactoNegocio contactoNegocio = new ContactoNegocio();
-            try
-            {
-                contactoListado = contactoNegocio.listarContacto(txtbRazonSocial.Text.Trim());
-                dgvContacto.DataSource = contactoListado;
-                dgvContacto.Columns[0].Visible = false;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+        //    ContactoNegocio contactoNegocio = new ContactoNegocio();
+        //    try
+        //    {
+        //        contactoListado = contactoNegocio.listarContacto(txtbRazonSocial.Text.Trim());
+        //        dgvContacto.DataSource = contactoListado;
+        //        dgvContacto.Columns[0].Visible = false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
             
-        }
-        private void btnVerContactos_Click(object sender, EventArgs e)
-        {
-            cargarGrilla();
-        }
+        //}
+        //private void btnVerContactos_Click(object sender, EventArgs e)
+        //{
+        //    cargarGrilla();
+        //}
+
+
 
 
 
@@ -64,27 +72,42 @@ namespace Presentacion
             try
             {
                 if (proveedor == null)
-                {
                     proveedor = new Proveedor();
-                }
+                proveedor.CUIL = txtCUIL.Text;
+                proveedor.RazonSocial = txtRazonSocial.Text;
+                proveedor.Direccion = txtDireccion.Text;
+                proveedor.Localidad = txtLocalidad.Text;
+                proveedor.Contacto = txtContacto.Text;
+                proveedor.Telefono = txtTelefono.Text;
+                proveedor.Mail = txtbMail.Text;
 
-                proveedor.CUIL = txtbCUIL.Text;
-                proveedor.RazonSocial = txtbRazonSocial.Text;
-                if(txtbCUIL.Text.Trim() =="" || txtbRazonSocial.Text.Trim()=="")
+                if (proveedor.CUIL != null)
                 {
-                    MessageBox.Show("Estos datos son obligatorios");
-                    return;
+                    proveedorNegocio.modificarProveedor(proveedor);
+                }
+                else
+                {
+                    if (txtCUIL.Text.Trim() == "" || txtRazonSocial.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Estos datos son obligatorios");
+                        return;
+                    }
+
+                    proveedorNegocio.agregarProveedor(proveedor);
                 }
 
-                proveedorNegocio.agregarProveedor(proveedor);
-            }
+            }     
             catch (Exception ex)
             {
 
                 throw ex;
             }
-            
+            MessageBox.Show("Agregado correctamente");
+            Close();
         }
+
+
+
 
 
     }

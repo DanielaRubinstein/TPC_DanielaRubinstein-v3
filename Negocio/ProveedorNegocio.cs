@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using Dominio;
 
 
@@ -21,7 +24,7 @@ namespace Negocio
             try
             {
                 //accesoDatos = new AccesoDatos();
-                accesoDatos.SetearConsulta("Select IdProveedor, CUIL, RazonSocial, Localidad, Calle, NroCalle, Piso, Departamento from Proveedor inner join Direccion on Direccion.IdDireccion = Proveedor.IdDireccion");
+                accesoDatos.SetearConsulta("Select IdProveedor, CUIL, RazonSocial, Direccion, Localidad, Contacto, Telefono, Mail from Proveedores ");
                 //accesoDatos.SetearConsulta("Select IdProveedor, CUIL, RazonSocial from Proveedor");
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarConsulta();
@@ -32,12 +35,12 @@ namespace Negocio
                     proveedor.IdEmpresa = (int)accesoDatos.Lector["IdProveedor"];
                     proveedor.CUIL = accesoDatos.Lector["CUIL"].ToString();
                     proveedor.RazonSocial = accesoDatos.Lector["RazonSocial"].ToString();
-                    proveedor.Direccion = new Direccion();
-                    proveedor.Direccion.Localidad = accesoDatos.Lector["Localidad"].ToString();
-                    proveedor.Direccion.Calle = accesoDatos.Lector["Calle"].ToString();
-                    proveedor.Direccion.NroCalle = (int)accesoDatos.Lector["NroCalle"];
-                    proveedor.Direccion.Piso = (int)accesoDatos.Lector["Piso"];
-                    proveedor.Direccion.Departamento = accesoDatos.Lector["Departamento"].ToString();
+                    proveedor.Direccion = accesoDatos.Lector["Direccion"].ToString();
+                    proveedor.Localidad = accesoDatos.Lector["Localidad"].ToString();
+                    proveedor.Contacto = accesoDatos.Lector["Contacto"].ToString();
+                    proveedor.Telefono = accesoDatos.Lector["Telefono"].ToString();
+                    proveedor.Mail = accesoDatos.Lector["Mail"].ToString();
+
                     lista.Add(proveedor);
                 }
                 return lista;
@@ -58,9 +61,40 @@ namespace Negocio
             string consulta = "";
             try
             {
-                consulta = "insert into PROVEEDOR (CUIL, RazonSocial, IdDireccion, IdContacto )";
-                consulta = consulta + "values ('" + proveedorNuevo.CUIL + "','" + proveedorNuevo.RazonSocial + "', 2, 3)";
+                consulta = "insert into PROVEEDORES (CUIL, RazonSocial, Direccion , Localidad, Contacto, Telefono, Mail )";
+                consulta = consulta + "values ('" + proveedorNuevo.CUIL + "','" + proveedorNuevo.RazonSocial + "','" + proveedorNuevo.Direccion + "','" + proveedorNuevo.Localidad + "','" + proveedorNuevo.Contacto + "','" + proveedorNuevo.Telefono + "', '" + proveedorNuevo.Mail + "' )";
                 accesoDatos.SetearConsulta(consulta);
+                accesoDatos.AbrirConexion();
+                accesoDatos.ejecutarAccion();
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
+            
+            finally
+            {
+                if (accesoDatos != null)
+                    accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void modificarProveedor(Proveedor proveedor)
+        {
+
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.SetearConsulta("Update PROVEEDORES set CUIL=@CUIL, RazonSocial=@RazonSocial, Direccion=@Direccion,Localidad=@Localidad,Contacto=@Contacto, Telefono=@Telefono, Mail=@Mail where IdProveedor=@IdProveedor ");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@CUIL", proveedor.CUIL);
+                accesoDatos.Comando.Parameters.AddWithValue("@RazonSocial", proveedor.RazonSocial);
+                accesoDatos.Comando.Parameters.AddWithValue("@Direccion", proveedor.Direccion);
+                accesoDatos.Comando.Parameters.AddWithValue("@Localidad", proveedor.Localidad);
+                accesoDatos.Comando.Parameters.AddWithValue("@Contacto", proveedor.Contacto);
+                accesoDatos.Comando.Parameters.AddWithValue("@Telefono", proveedor.Telefono);
+                accesoDatos.Comando.Parameters.AddWithValue("@Mail", proveedor.Mail);
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarAccion();
             }
@@ -70,9 +104,9 @@ namespace Negocio
             }
             finally
             {
-                if (accesoDatos != null)
-                    accesoDatos.cerrarConexion();
+                accesoDatos.cerrarConexion();
             }
+
         }
 
 

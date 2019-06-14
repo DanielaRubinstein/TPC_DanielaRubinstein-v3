@@ -11,8 +11,8 @@ namespace Dominio
         public int IdContacto { get; set; }
         public string Nombre { get; set; }
         public string Sector { get; set; }
-        public List<Telefono> Telefono { get; set; }
-        public TipoTelefono TipoTel{get;set;}
+        public string Telefono { get; set; }
+        //public TipoTelefono TipoTel{get;set;}
         public string Mail { get; set; }
     }
 }

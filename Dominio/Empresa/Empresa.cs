@@ -11,8 +11,11 @@ namespace Dominio
         public int IdEmpresa { get; set; }
         public string CUIL { get; set; }
         public string RazonSocial { get; set; }
-        public Direccion Direccion { get; set; }
-        public List<Contacto> Contacto { get; set; }
+        public string Direccion { get; set; }
+        public string Localidad { get; set; }
+        public string Contacto { get; set; }
+        public string Telefono { get; set; }
+        public string Mail { get; set; }
 
         //public Empresa()
         //{
@@ -32,7 +35,7 @@ namespace Dominio
 
         public override string ToString()
         {
-          return IdEmpresa + "," + CUIL + "," + RazonSocial;
+          return IdEmpresa + "," + CUIL + "," + RazonSocial + "," + Direccion + "," + Localidad + "," + Contacto + "," + Telefono + "," + Mail;
         }
     }
 }

@@ -41,23 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empresa\Telefono.cs" />
     <Compile Include="Facturacion\DetalleFactura.cs" />
     <Compile Include="Empresa\Cliente.cs" />
     <Compile Include="Empresa\Contacto.cs" />
-    <Compile Include="Empresa\Direccion.cs" />
     <Compile Include="Empresa\Empresa.cs" />
     <Compile Include="Facturacion\Factura.cs" />
     <Compile Include="Facturacion\Impuesto.cs" />
     <Compile Include="Producto\Producto.cs" />
-    <Compile Include="Empresa\Pais.cs" />
     <Compile Include="Producto\Medida.cs" />
     <Compile Include="Producto\Categoria.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Producto\Marca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Empresa\Provincia.cs" />
-    <Compile Include="Empresa\TipoTelefono.cs" />
     <Compile Include="Empresa\Proveedor.cs" />
   </ItemGroup>
   <ItemGroup />
