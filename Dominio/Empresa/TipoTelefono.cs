@@ -10,6 +10,7 @@ namespace Dominio
     {
         public int IdTipoTelefono { get; set; }
         public string Descripcion { get; set; } //celular,linea
+
     }
 
 
