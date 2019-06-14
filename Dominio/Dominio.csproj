@@ -50,7 +50,6 @@
     <Compile Include="Facturacion\Factura.cs" />
     <Compile Include="Facturacion\Impuesto.cs" />
     <Compile Include="Producto\Producto.cs" />
-    <Compile Include="Empresa\Localidad.cs" />
     <Compile Include="Empresa\Pais.cs" />
     <Compile Include="Producto\Medida.cs" />
     <Compile Include="Producto\Categoria.cs" />

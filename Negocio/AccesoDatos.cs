@@ -9,6 +9,8 @@ namespace Negocio
 {
     public class AccesoDatos
     {
+        public static string cadenaConexion = "initial catalog=DB_TPC_Rubinstein;data source=DESKTOP-3LK2VR8\\SQLEXPRESS;integrated security=sspi";
+
         private SqlCommand comando; 
         private SqlConnection conexion;
         private SqlDataReader lector;
@@ -17,27 +19,30 @@ namespace Negocio
         {
             get { return lector; }
         } 
+
+        public SqlCommand Comando
+        {
+            get { return comando; }
+        }
        
         public AccesoDatos()
         {
-            comando = new SqlCommand();
-
-            conexion = new SqlConnection(@"initial catalog=DB_TPC_Rubinstein;data source=DESKTOP-3LK2VR8\\SQLEXPRESS;integrated security=sspi");
-            comando.Connection = conexion;
+            conexion = new SqlConnection(cadenaConexion);
         }
 
         public void SetearConsulta(string consulta)
         {
+            comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
 
-        public void LeerConsulta ()
+        public void AbrirConexion ()
         {
             try
             {
                 conexion.Open();
-                lector = comando.ExecuteReader();
+                //lector = comando.ExecuteReader();
             }
             catch(Exception ex)
             {

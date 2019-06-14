@@ -16,6 +16,7 @@ namespace Presentacion
     {
 
         private Proveedor proveedor;
+        private List<Contacto> contactoListado;
         public frmProveedor()
         {
             InitializeComponent();
@@ -27,9 +28,62 @@ namespace Presentacion
             this.proveedor = proveedor;
         }
 
-        private void PlanillaProveedores_Load(Object Sender,EventArgs e)
+        private void frmProveedor_Load(Object Sender,EventArgs e)
         {
+            
+            
+            
+        }
+        private void cargarGrilla()
+        {
+           
+            ContactoNegocio contactoNegocio = new ContactoNegocio();
+            try
+            {
+                contactoListado = contactoNegocio.listarContacto(txtbRazonSocial.Text.Trim());
+                dgvContacto.DataSource = contactoListado;
+                dgvContacto.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
+        private void btnVerContactos_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+        }
 
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
+
+            try
+            {
+                if (proveedor == null)
+                {
+                    proveedor = new Proveedor();
+                }
+
+                proveedor.CUIL = txtbCUIL.Text;
+                proveedor.RazonSocial = txtbRazonSocial.Text;
+                if(txtbCUIL.Text.Trim() =="" || txtbRazonSocial.Text.Trim()=="")
+                {
+                    MessageBox.Show("Estos datos son obligatorios");
+                    return;
+                }
+
+                proveedorNegocio.agregarProveedor(proveedor);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
 

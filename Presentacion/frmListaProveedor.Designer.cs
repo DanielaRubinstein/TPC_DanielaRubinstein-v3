@@ -91,7 +91,12 @@
             // 
             // dgvProveedor
             // 
+            this.dgvProveedor.AllowUserToAddRows = false;
+            this.dgvProveedor.AllowUserToDeleteRows = false;
+            this.dgvProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProveedor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvProveedor.Location = new System.Drawing.Point(12, 114);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.RowTemplate.Height = 33;
@@ -154,6 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1982, 1079);
             this.Controls.Add(this.tbtBuscar);
             this.Controls.Add(this.lblEditar);
@@ -169,6 +175,7 @@
             this.MinimumSize = new System.Drawing.Size(2008, 1150);
             this.Name = "frmListaProveedor";
             this.Text = "Proveedor";
+            this.Load += new System.EventHandler(this.frmListaProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

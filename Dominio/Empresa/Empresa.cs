@@ -14,10 +14,10 @@ namespace Dominio
         public Direccion Direccion { get; set; }
         public List<Contacto> Contacto { get; set; }
 
-        public Empresa()
-        {
-            this.Direccion = new Direccion();
-        }
+        //public Empresa()
+        //{
+        //    this.Direccion = new Direccion();
+        //}
         //public Empresa(int id)
         //{
         //    IdEmpresa = id;
@@ -32,8 +32,7 @@ namespace Dominio
 
         public override string ToString()
         {
-          return IdEmpresa + "," + CUIL + "," + RazonSocial + "(" + Direccion.NroCalle.ToString() + ")" + "(" +
-          Direccion.Piso.ToString() + ")" + Direccion.Localidad;
+          return IdEmpresa + "," + CUIL + "," + RazonSocial;
         }
     }
 }

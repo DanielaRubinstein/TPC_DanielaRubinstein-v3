@@ -33,7 +33,7 @@ namespace Presentacion
         {
             frmListaProveedor formProveedor = new frmListaProveedor();
             formProveedor.ShowDialog();
-        }
+        } 
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
