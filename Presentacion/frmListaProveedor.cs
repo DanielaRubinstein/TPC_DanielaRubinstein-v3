@@ -14,8 +14,8 @@ namespace Presentacion
 {
     public partial class frmListaProveedor : Form
     {
-        //private Proveedor proveedor;
-        //private List<Proveedor> proveedorListado;
+      
+        private List<Proveedor> proveedorListado;
 
 
         public frmListaProveedor()
@@ -36,10 +36,10 @@ namespace Presentacion
             ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
             try
             {
-                //proveedorListado = proveedorNegocio.listar();
-                dgvProveedor.DataSource = proveedorNegocio.listar();
-                dgvProveedor.Refresh();
-                //dgvProveedor.Columns[0].Visible = true;
+                proveedorListado = proveedorNegocio.listar();
+                dgvProveedor.DataSource = proveedorListado;
+                // dgvProveedor.Refresh();
+                dgvProveedor.Columns[8].Visible = false;
                 //this.proveedorListado = proveedorNegocio.listar();
                 //dgvProveedor.DataSource = proveedor.listar();
                 //dgvProveedor.DataSource = this.proveedorListado;
@@ -59,6 +59,7 @@ namespace Presentacion
         {
             try
             {
+
                 frmProveedor proveedorModificar = new frmProveedor((Proveedor)dgvProveedor.CurrentRow.DataBoundItem);
                 proveedorModificar.ShowDialog();
                 cargarGrilla();
@@ -67,6 +68,31 @@ namespace Presentacion
             {
                 throw ex;
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
+            Proveedor proveedor = new Proveedor();
+       
+            try
+            { 
+               DialogResult resultado = MessageBox.Show("Estas seguro de eliminar?", "Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+               if(resultado==DialogResult.Yes)
+               {
+                    proveedor = (Proveedor)dgvProveedor.CurrentRow.DataBoundItem;
+                    proveedor.Estado = false;
+                    proveedorNegocio.modificarProveedor(proveedor);
+                    cargarGrilla();
+               }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
         }
     }
 }

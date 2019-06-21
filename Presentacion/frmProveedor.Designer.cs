@@ -41,12 +41,13 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblIdProveedor = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtbMail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblMail = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtbMail = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbDireccion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +180,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
             // 
+            // txtbMail
+            // 
+            this.txtbMail.Location = new System.Drawing.Point(160, 189);
+            this.txtbMail.Name = "txtbMail";
+            this.txtbMail.Size = new System.Drawing.Size(383, 40);
+            this.txtbMail.TabIndex = 20;
+            // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(160, 128);
@@ -223,12 +231,16 @@
             this.lblTelefono.TabIndex = 3;
             this.lblTelefono.Text = "Telefono:";
             // 
-            // txtbMail
+            // btnCancelar
             // 
-            this.txtbMail.Location = new System.Drawing.Point(160, 189);
-            this.txtbMail.Name = "txtbMail";
-            this.txtbMail.Size = new System.Drawing.Size(383, 40);
-            this.txtbMail.TabIndex = 20;
+            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(258, 856);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(203, 52);
+            this.btnCancelar.TabIndex = 28;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmProveedor
             // 
@@ -236,6 +248,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(774, 936);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblIdProveedor);
             this.Controls.Add(this.btnAceptar);
@@ -278,5 +291,6 @@
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtbMail;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

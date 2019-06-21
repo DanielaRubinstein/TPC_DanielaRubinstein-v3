@@ -16,6 +16,7 @@ namespace Dominio
         public string Contacto { get; set; }
         public string Telefono { get; set; }
         public string Mail { get; set; }
+        public bool Estado { get; set; }
 
         //public Empresa()
         //{
@@ -35,7 +36,7 @@ namespace Dominio
 
         public override string ToString()
         {
-          return IdEmpresa + "," + CUIL + "," + RazonSocial + "," + Direccion + "," + Localidad + "," + Contacto + "," + Telefono + "," + Mail;
+          return IdEmpresa + "," + CUIL + "," + RazonSocial + "," + Direccion + "," + Localidad + "," + Contacto + "," + Telefono + "," + Mail + "," + Estado;
         }
     }
 }

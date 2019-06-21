@@ -34,11 +34,11 @@
             this.lblEliminar = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tbtBuscar
@@ -97,14 +97,14 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dgvProveedor
+            // dgvCliente
             // 
-            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Location = new System.Drawing.Point(12, 122);
-            this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.RowTemplate.Height = 33;
-            this.dgvProveedor.Size = new System.Drawing.Size(1958, 957);
-            this.dgvProveedor.TabIndex = 26;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Location = new System.Drawing.Point(12, 122);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.RowTemplate.Height = 33;
+            this.dgvCliente.Size = new System.Drawing.Size(1958, 957);
+            this.dgvCliente.TabIndex = 26;
             // 
             // btnBuscar
             // 
@@ -154,13 +154,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1982, 1079);
             this.Controls.Add(this.tbtBuscar);
             this.Controls.Add(this.lblEditar);
             this.Controls.Add(this.lblEliminar);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dgvProveedor);
+            this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
@@ -169,7 +170,8 @@
             this.MinimumSize = new System.Drawing.Size(2008, 1150);
             this.Name = "frmListaCliente";
             this.Text = "Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
+            this.Load += new System.EventHandler(this.frmCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,7 +184,7 @@
         private System.Windows.Forms.Label lblEliminar;
         private System.Windows.Forms.Label lblAgregar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dgvProveedor;
+        private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;

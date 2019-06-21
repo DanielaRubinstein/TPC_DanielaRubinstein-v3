@@ -24,7 +24,7 @@ namespace Negocio
             try
             {
                 //accesoDatos = new AccesoDatos();
-                accesoDatos.SetearConsulta("Select IdProveedor, CUIL, RazonSocial, Direccion, Localidad, Contacto, Telefono, Mail from Proveedores ");
+                accesoDatos.SetearConsulta("Select IdProveedor, CUIL, RazonSocial, Direccion, Localidad, Contacto, Telefono, Mail from Proveedores where Estado=1 ");
                 //accesoDatos.SetearConsulta("Select IdProveedor, CUIL, RazonSocial from Proveedor");
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarConsulta();
@@ -61,8 +61,8 @@ namespace Negocio
             string consulta = "";
             try
             {
-                consulta = "insert into PROVEEDORES (CUIL, RazonSocial, Direccion , Localidad, Contacto, Telefono, Mail )";
-                consulta = consulta + "values ('" + proveedorNuevo.CUIL + "','" + proveedorNuevo.RazonSocial + "','" + proveedorNuevo.Direccion + "','" + proveedorNuevo.Localidad + "','" + proveedorNuevo.Contacto + "','" + proveedorNuevo.Telefono + "', '" + proveedorNuevo.Mail + "' )";
+                consulta = "insert into PROVEEDORES (CUIL, RazonSocial, Direccion , Localidad, Contacto, Telefono, Mail, Estado )";
+                consulta = consulta + "values ('" + proveedorNuevo.CUIL + "','" + proveedorNuevo.RazonSocial + "','" + proveedorNuevo.Direccion + "','" + proveedorNuevo.Localidad + "','" + proveedorNuevo.Contacto + "','" + proveedorNuevo.Telefono + "', '" + proveedorNuevo.Mail + "', "+ 1 +" )";
                 accesoDatos.SetearConsulta(consulta);
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarAccion();
@@ -86,7 +86,7 @@ namespace Negocio
             AccesoDatos accesoDatos = new AccesoDatos();
             try
             {
-                accesoDatos.SetearConsulta("Update PROVEEDORES set CUIL=@CUIL, RazonSocial=@RazonSocial, Direccion=@Direccion,Localidad=@Localidad,Contacto=@Contacto, Telefono=@Telefono, Mail=@Mail where IdProveedor=@IdProveedor ");
+                accesoDatos.SetearConsulta("Update PROVEEDORES set CUIL=@CUIL, RazonSocial=@RazonSocial, Direccion=@Direccion,Localidad=@Localidad,Contacto=@Contacto, Telefono=@Telefono, Mail=@Mail, Estado=@Estado where IdProveedor= "+proveedor.IdEmpresa);
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@CUIL", proveedor.CUIL);
                 accesoDatos.Comando.Parameters.AddWithValue("@RazonSocial", proveedor.RazonSocial);
@@ -95,6 +95,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@Contacto", proveedor.Contacto);
                 accesoDatos.Comando.Parameters.AddWithValue("@Telefono", proveedor.Telefono);
                 accesoDatos.Comando.Parameters.AddWithValue("@Mail", proveedor.Mail);
+                accesoDatos.Comando.Parameters.AddWithValue("@Estado", proveedor.Estado);
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarAccion();
             }
@@ -108,6 +109,9 @@ namespace Negocio
             }
 
         }
+
+
+
 
 
 

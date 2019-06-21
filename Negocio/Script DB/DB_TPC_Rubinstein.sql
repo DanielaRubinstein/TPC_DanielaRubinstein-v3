@@ -17,7 +17,8 @@ create table Proveedores(
     Localidad varchar(60) not null,
     Contacto varchar(60) not null,
     Telefono varchar(60) not null,
-    Mail varchar(60) not null
+    Mail varchar(60) not null,
+    Estado bit not null
 )
 go
 create table Clientes( 

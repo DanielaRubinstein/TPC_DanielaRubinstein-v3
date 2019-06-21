@@ -31,33 +31,24 @@
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblCalle = new System.Windows.Forms.Label();
-            this.gbDireccion = new System.Windows.Forms.GroupBox();
-            this.txtbDpto = new System.Windows.Forms.TextBox();
-            this.txtbPiso = new System.Windows.Forms.TextBox();
-            this.txtbNro = new System.Windows.Forms.TextBox();
-            this.txtbCalle = new System.Windows.Forms.TextBox();
-            this.cmboxLocalidad = new System.Windows.Forms.ComboBox();
-            this.lblLocalidad = new System.Windows.Forms.Label();
-            this.cmboxProvincia = new System.Windows.Forms.ComboBox();
-            this.lblProvincia = new System.Windows.Forms.Label();
-            this.cmboxPais = new System.Windows.Forms.ComboBox();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.lblDepartamento = new System.Windows.Forms.Label();
-            this.lblPiso = new System.Windows.Forms.Label();
-            this.lblNroCalle = new System.Windows.Forms.Label();
-            this.txtbRazonSocial = new System.Windows.Forms.TextBox();
-            this.txtbCUIT = new System.Windows.Forms.TextBox();
-            this.txtbID = new System.Windows.Forms.TextBox();
-            this.gbContacto = new System.Windows.Forms.GroupBox();
-            this.btnEliminarContacto = new System.Windows.Forms.Button();
-            this.btnAgregarContacto = new System.Windows.Forms.Button();
-            this.dgvContacto = new System.Windows.Forms.DataGridView();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.txtCUIL = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.gbDireccion = new System.Windows.Forms.GroupBox();
+            this.txtLocalidad = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblLocalidad = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.txtContacto = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbDireccion.SuspendLayout();
-            this.gbContacto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContacto)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIdCliente
@@ -90,256 +81,181 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Razon social:";
             // 
-            // lblCalle
+            // txtRazonSocial
             // 
-            this.lblCalle.AutoSize = true;
-            this.lblCalle.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalle.Location = new System.Drawing.Point(73, 243);
-            this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(80, 36);
-            this.lblCalle.TabIndex = 3;
-            this.lblCalle.Text = "Calle:";
+            this.txtRazonSocial.Location = new System.Drawing.Point(224, 168);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(371, 31);
+            this.txtRazonSocial.TabIndex = 14;
+            // 
+            // txtCUIL
+            // 
+            this.txtCUIL.Location = new System.Drawing.Point(224, 112);
+            this.txtCUIL.Name = "txtCUIL";
+            this.txtCUIL.Size = new System.Drawing.Size(371, 31);
+            this.txtCUIL.TabIndex = 15;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(438, 804);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(202, 52);
+            this.btnAgregar.TabIndex = 18;
+            this.btnAgregar.Text = "Aceptar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // gbDireccion
             // 
-            this.gbDireccion.Controls.Add(this.txtbDpto);
-            this.gbDireccion.Controls.Add(this.txtbPiso);
-            this.gbDireccion.Controls.Add(this.txtbNro);
-            this.gbDireccion.Controls.Add(this.txtbCalle);
-            this.gbDireccion.Controls.Add(this.cmboxLocalidad);
+            this.gbDireccion.Controls.Add(this.txtLocalidad);
+            this.gbDireccion.Controls.Add(this.txtDireccion);
             this.gbDireccion.Controls.Add(this.lblLocalidad);
-            this.gbDireccion.Controls.Add(this.cmboxProvincia);
-            this.gbDireccion.Controls.Add(this.lblProvincia);
-            this.gbDireccion.Controls.Add(this.cmboxPais);
-            this.gbDireccion.Controls.Add(this.lblPais);
-            this.gbDireccion.Controls.Add(this.lblDepartamento);
-            this.gbDireccion.Controls.Add(this.lblPiso);
-            this.gbDireccion.Controls.Add(this.lblNroCalle);
-            this.gbDireccion.Controls.Add(this.lblCalle);
+            this.gbDireccion.Controls.Add(this.lblDireccion);
             this.gbDireccion.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDireccion.Location = new System.Drawing.Point(48, 233);
+            this.gbDireccion.Location = new System.Drawing.Point(47, 235);
             this.gbDireccion.Name = "gbDireccion";
-            this.gbDireccion.Size = new System.Drawing.Size(592, 505);
-            this.gbDireccion.TabIndex = 4;
+            this.gbDireccion.Size = new System.Drawing.Size(592, 220);
+            this.gbDireccion.TabIndex = 21;
             this.gbDireccion.TabStop = false;
             this.gbDireccion.Text = "Direccion";
             // 
-            // txtbDpto
+            // txtLocalidad
             // 
-            this.txtbDpto.Location = new System.Drawing.Point(164, 421);
-            this.txtbDpto.Name = "txtbDpto";
-            this.txtbDpto.Size = new System.Drawing.Size(383, 40);
-            this.txtbDpto.TabIndex = 16;
+            this.txtLocalidad.Location = new System.Drawing.Point(160, 62);
+            this.txtLocalidad.Name = "txtLocalidad";
+            this.txtLocalidad.Size = new System.Drawing.Size(383, 40);
+            this.txtLocalidad.TabIndex = 17;
             // 
-            // txtbPiso
+            // txtDireccion
             // 
-            this.txtbPiso.Location = new System.Drawing.Point(164, 360);
-            this.txtbPiso.Name = "txtbPiso";
-            this.txtbPiso.Size = new System.Drawing.Size(383, 40);
-            this.txtbPiso.TabIndex = 15;
-            // 
-            // txtbNro
-            // 
-            this.txtbNro.Location = new System.Drawing.Point(164, 299);
-            this.txtbNro.Name = "txtbNro";
-            this.txtbNro.Size = new System.Drawing.Size(383, 40);
-            this.txtbNro.TabIndex = 14;
-            // 
-            // txtbCalle
-            // 
-            this.txtbCalle.Location = new System.Drawing.Point(164, 238);
-            this.txtbCalle.Name = "txtbCalle";
-            this.txtbCalle.Size = new System.Drawing.Size(383, 40);
-            this.txtbCalle.TabIndex = 13;
-            // 
-            // cmboxLocalidad
-            // 
-            this.cmboxLocalidad.FormattingEnabled = true;
-            this.cmboxLocalidad.Location = new System.Drawing.Point(164, 52);
-            this.cmboxLocalidad.Name = "cmboxLocalidad";
-            this.cmboxLocalidad.Size = new System.Drawing.Size(383, 41);
-            this.cmboxLocalidad.TabIndex = 12;
+            this.txtDireccion.Location = new System.Drawing.Point(160, 124);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(383, 40);
+            this.txtDireccion.TabIndex = 13;
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalidad.Location = new System.Drawing.Point(24, 57);
+            this.lblLocalidad.Location = new System.Drawing.Point(20, 62);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(134, 36);
             this.lblLocalidad.TabIndex = 11;
             this.lblLocalidad.Text = "Localidad:";
             // 
-            // cmboxProvincia
+            // lblDireccion
             // 
-            this.cmboxProvincia.FormattingEnabled = true;
-            this.cmboxProvincia.Location = new System.Drawing.Point(164, 114);
-            this.cmboxProvincia.Name = "cmboxProvincia";
-            this.cmboxProvincia.Size = new System.Drawing.Size(383, 41);
-            this.cmboxProvincia.TabIndex = 10;
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(21, 128);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(133, 36);
+            this.lblDireccion.TabIndex = 3;
+            this.lblDireccion.Text = "Direccion:";
             // 
-            // lblProvincia
+            // groupBox1
             // 
-            this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvincia.Location = new System.Drawing.Point(27, 119);
-            this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(131, 36);
-            this.lblProvincia.TabIndex = 9;
-            this.lblProvincia.Text = "Provincia:";
+            this.groupBox1.Controls.Add(this.txtMail);
+            this.groupBox1.Controls.Add(this.txtTelefono);
+            this.groupBox1.Controls.Add(this.lblMail);
+            this.groupBox1.Controls.Add(this.txtContacto);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblTelefono);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(47, 495);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(592, 255);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contacto";
             // 
-            // cmboxPais
+            // txtMail
             // 
-            this.cmboxPais.FormattingEnabled = true;
-            this.cmboxPais.Location = new System.Drawing.Point(164, 176);
-            this.cmboxPais.Name = "cmboxPais";
-            this.cmboxPais.Size = new System.Drawing.Size(383, 41);
-            this.cmboxPais.TabIndex = 8;
+            this.txtMail.Location = new System.Drawing.Point(160, 189);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(383, 40);
+            this.txtMail.TabIndex = 20;
             // 
-            // lblPais
+            // txtTelefono
             // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(84, 181);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(69, 36);
-            this.lblPais.TabIndex = 7;
-            this.lblPais.Text = "Pais:";
+            this.txtTelefono.Location = new System.Drawing.Point(160, 128);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(383, 40);
+            this.txtTelefono.TabIndex = 19;
             // 
-            // lblDepartamento
+            // lblMail
             // 
-            this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartamento.Location = new System.Drawing.Point(73, 429);
-            this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(81, 36);
-            this.lblDepartamento.TabIndex = 6;
-            this.lblDepartamento.Text = "Dpto:";
+            this.lblMail.AutoSize = true;
+            this.lblMail.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMail.Location = new System.Drawing.Point(63, 190);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(76, 36);
+            this.lblMail.TabIndex = 18;
+            this.lblMail.Text = "Mail:";
             // 
-            // lblPiso
+            // txtContacto
             // 
-            this.lblPiso.AutoSize = true;
-            this.lblPiso.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPiso.Location = new System.Drawing.Point(82, 367);
-            this.lblPiso.Name = "lblPiso";
-            this.lblPiso.Size = new System.Drawing.Size(71, 36);
-            this.lblPiso.TabIndex = 5;
-            this.lblPiso.Text = "Piso:";
+            this.txtContacto.Location = new System.Drawing.Point(160, 62);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(383, 40);
+            this.txtContacto.TabIndex = 17;
             // 
-            // lblNroCalle
+            // label2
             // 
-            this.lblNroCalle.AutoSize = true;
-            this.lblNroCalle.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroCalle.Location = new System.Drawing.Point(87, 305);
-            this.lblNroCalle.Name = "lblNroCalle";
-            this.lblNroCalle.Size = new System.Drawing.Size(67, 36);
-            this.lblNroCalle.TabIndex = 4;
-            this.lblNroCalle.Text = "Nro:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 36);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Nombre:";
             // 
-            // txtbRazonSocial
+            // lblTelefono
             // 
-            this.txtbRazonSocial.Location = new System.Drawing.Point(224, 168);
-            this.txtbRazonSocial.Name = "txtbRazonSocial";
-            this.txtbRazonSocial.Size = new System.Drawing.Size(371, 31);
-            this.txtbRazonSocial.TabIndex = 14;
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(21, 128);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(122, 36);
+            this.lblTelefono.TabIndex = 3;
+            this.lblTelefono.Text = "Telefono:";
             // 
-            // txtbCUIT
+            // btnCancelar
             // 
-            this.txtbCUIT.Location = new System.Drawing.Point(224, 112);
-            this.txtbCUIT.Name = "txtbCUIT";
-            this.txtbCUIT.Size = new System.Drawing.Size(371, 31);
-            this.txtbCUIT.TabIndex = 15;
-            // 
-            // txtbID
-            // 
-            this.txtbID.Location = new System.Drawing.Point(224, 61);
-            this.txtbID.Name = "txtbID";
-            this.txtbID.Size = new System.Drawing.Size(371, 31);
-            this.txtbID.TabIndex = 16;
-            // 
-            // gbContacto
-            // 
-            this.gbContacto.Controls.Add(this.btnEliminarContacto);
-            this.gbContacto.Controls.Add(this.btnAgregarContacto);
-            this.gbContacto.Controls.Add(this.dgvContacto);
-            this.gbContacto.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbContacto.Location = new System.Drawing.Point(678, 61);
-            this.gbContacto.Name = "gbContacto";
-            this.gbContacto.Size = new System.Drawing.Size(928, 677);
-            this.gbContacto.TabIndex = 17;
-            this.gbContacto.TabStop = false;
-            this.gbContacto.Text = "Contacto";
-            // 
-            // btnEliminarContacto
-            // 
-            this.btnEliminarContacto.Location = new System.Drawing.Point(427, 39);
-            this.btnEliminarContacto.Name = "btnEliminarContacto";
-            this.btnEliminarContacto.Size = new System.Drawing.Size(225, 42);
-            this.btnEliminarContacto.TabIndex = 2;
-            this.btnEliminarContacto.Text = "Eliminar contacto";
-            this.btnEliminarContacto.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarContacto
-            // 
-            this.btnAgregarContacto.Location = new System.Drawing.Point(674, 39);
-            this.btnAgregarContacto.Name = "btnAgregarContacto";
-            this.btnAgregarContacto.Size = new System.Drawing.Size(237, 42);
-            this.btnAgregarContacto.TabIndex = 1;
-            this.btnAgregarContacto.Text = "Agregar contacto";
-            this.btnAgregarContacto.UseVisualStyleBackColor = true;
-            // 
-            // dgvContacto
-            // 
-            this.dgvContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContacto.Location = new System.Drawing.Point(6, 107);
-            this.dgvContacto.Name = "dgvContacto";
-            this.dgvContacto.RowTemplate.Height = 33;
-            this.dgvContacto.Size = new System.Drawing.Size(916, 565);
-            this.dgvContacto.TabIndex = 0;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(1398, 786);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(202, 52);
-            this.btnAgregar.TabIndex = 18;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(1138, 786);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(226, 52);
-            this.btnModificar.TabIndex = 19;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(207, 804);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(203, 52);
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1668, 868);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.gbContacto);
-            this.Controls.Add(this.txtbID);
-            this.Controls.Add(this.txtbCUIT);
-            this.Controls.Add(this.txtbRazonSocial);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(687, 868);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbDireccion);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtCUIL);
+            this.Controls.Add(this.txtRazonSocial);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCuit);
             this.Controls.Add(this.lblIdCliente);
             this.MaximumSize = new System.Drawing.Size(1694, 939);
-            this.MinimumSize = new System.Drawing.Size(1694, 939);
+            this.MinimumSize = new System.Drawing.Size(713, 939);
             this.Name = "frmCliente";
             this.Text = "Formulario cliente";
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             this.gbDireccion.ResumeLayout(false);
             this.gbDireccion.PerformLayout();
-            this.gbContacto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContacto)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,29 +266,21 @@
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCalle;
-        private System.Windows.Forms.GroupBox gbDireccion;
-        private System.Windows.Forms.TextBox txtbDpto;
-        private System.Windows.Forms.TextBox txtbPiso;
-        private System.Windows.Forms.TextBox txtbNro;
-        private System.Windows.Forms.TextBox txtbCalle;
-        private System.Windows.Forms.ComboBox cmboxLocalidad;
-        private System.Windows.Forms.Label lblLocalidad;
-        private System.Windows.Forms.ComboBox cmboxProvincia;
-        private System.Windows.Forms.Label lblProvincia;
-        private System.Windows.Forms.ComboBox cmboxPais;
-        private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.Label lblDepartamento;
-        private System.Windows.Forms.Label lblPiso;
-        private System.Windows.Forms.Label lblNroCalle;
-        private System.Windows.Forms.TextBox txtbRazonSocial;
-        private System.Windows.Forms.TextBox txtbCUIT;
-        private System.Windows.Forms.TextBox txtbID;
-        private System.Windows.Forms.GroupBox gbContacto;
-        private System.Windows.Forms.Button btnEliminarContacto;
-        private System.Windows.Forms.Button btnAgregarContacto;
-        private System.Windows.Forms.DataGridView dgvContacto;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.TextBox txtCUIL;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.GroupBox gbDireccion;
+        private System.Windows.Forms.TextBox txtLocalidad;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label lblLocalidad;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.TextBox txtContacto;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

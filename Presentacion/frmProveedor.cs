@@ -16,6 +16,7 @@ namespace Presentacion
     {
 
         private Proveedor proveedor=null;
+        bool modificado = false;
         //private List<Contacto> contactoListado;
         public frmProveedor()
         {
@@ -25,7 +26,7 @@ namespace Presentacion
         public frmProveedor(Proveedor prov)
         {
             InitializeComponent();
-            prov = proveedor;
+            proveedor = prov;
         }
 
         //public frmProveedor(Proveedor proveedor)
@@ -37,8 +38,20 @@ namespace Presentacion
         private void frmProveedor_Load(Object Sender,EventArgs e)
         {
             
-            
-            
+
+            if(proveedor != null)
+            {
+                txtCUIL.Text = proveedor.CUIL;
+                txtRazonSocial.Text = proveedor.RazonSocial;
+                txtDireccion.Text = proveedor.Direccion;
+                txtLocalidad.Text = proveedor.Localidad;
+                txtContacto.Text = proveedor.Contacto;
+                txtTelefono.Text = proveedor.Telefono;
+                txtbMail.Text = proveedor.Mail;
+                modificado = true;
+            }
+           
+    
         }
         //private void cargarGrilla()
         //{
@@ -71,29 +84,46 @@ namespace Presentacion
 
             try
             {
-                if (proveedor == null)
-                    proveedor = new Proveedor();
-                proveedor.CUIL = txtCUIL.Text;
-                proveedor.RazonSocial = txtRazonSocial.Text;
-                proveedor.Direccion = txtDireccion.Text;
-                proveedor.Localidad = txtLocalidad.Text;
-                proveedor.Contacto = txtContacto.Text;
-                proveedor.Telefono = txtTelefono.Text;
-                proveedor.Mail = txtbMail.Text;
-
-                if (proveedor.CUIL != null)
+                if (txtCUIL.Text.Trim() == "" || txtRazonSocial.Text.Trim() == "")
                 {
-                    proveedorNegocio.modificarProveedor(proveedor);
+                    MessageBox.Show("Estos datos son obligatorios");
+                    return;
                 }
+
                 else
                 {
-                    if (txtCUIL.Text.Trim() == "" || txtRazonSocial.Text.Trim() == "")
-                    {
-                        MessageBox.Show("Estos datos son obligatorios");
-                        return;
+                       if (proveedor == null)
+                    { 
+                        proveedor = new Proveedor();
+                        proveedor.CUIL = txtCUIL.Text;
+                       proveedor.RazonSocial = txtRazonSocial.Text;
+                       proveedor.Direccion = txtDireccion.Text;
+                       proveedor.Localidad = txtLocalidad.Text;
+                       proveedor.Contacto = txtContacto.Text;
+                       proveedor.Telefono = txtTelefono.Text;
+                       proveedor.Mail = txtbMail.Text;
                     }
 
-                    proveedorNegocio.agregarProveedor(proveedor);
+                    if (proveedor.IdEmpresa != 0 && modificado==true)
+                    {
+                        proveedor.CUIL = txtCUIL.Text;
+                        proveedor.RazonSocial = txtRazonSocial.Text;
+                        proveedor.Direccion = txtDireccion.Text;
+                        proveedor.Localidad = txtLocalidad.Text;
+                        proveedor.Contacto = txtContacto.Text;
+                        proveedor.Telefono = txtTelefono.Text;
+                        proveedor.Mail = txtbMail.Text;
+                        proveedor.Estado = true;
+                        proveedorNegocio.modificarProveedor(proveedor);
+                            MessageBox.Show("Modificado correctamente");
+                     }
+                    else
+                       {
+                        proveedorNegocio.agregarProveedor(proveedor);
+                            MessageBox.Show("Agregado correctamente");
+                       }
+                    
+
                 }
 
             }     
@@ -102,13 +132,13 @@ namespace Presentacion
 
                 throw ex;
             }
-            MessageBox.Show("Agregado correctamente");
+            
             Close();
         }
 
-
-
-
-
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

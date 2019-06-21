@@ -11,8 +11,8 @@ namespace Dominio
         public int IdProducto { get; set; }
         //public string CodigoBarras { get; set; }
         public string Descripcion { get; set; }
-        public Marca Marca { get; set; }
-        public Categoria Categoria { get; set; }
+        public string Marca { get; set; }
+        public string Categoria { get; set; }
         public Proveedor Proveedor { get; set; }
 
         public int StockMinimo { get; set; }

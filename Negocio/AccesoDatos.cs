@@ -9,7 +9,7 @@ namespace Negocio
 {
     public class AccesoDatos
     {
-        public static string cadenaConexion = "initial catalog=DB_TPC_Rubinstein;data source=DESKTOP-3LK2VR8\\SQLEXPRESS;integrated security=sspi";
+        public static string cadenaConexion = "initial catalog=DB_TPC_Rubinstein_v2;data source=DESKTOP-3LK2VR8\\SQLEXPRESS;integrated security=sspi";
 
         private SqlCommand comando; 
         private SqlConnection conexion;
