@@ -88,5 +88,37 @@ namespace Presentacion
             }
 
         }
+
+        private void tbtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(tbtBuscar.Text == "")
+            {
+                dgvCliente.DataSource = clienteListado;
+            }
+            else
+            {
+                List<Cliente> lista;
+                lista = clienteListado.FindAll(AUXILIAR => AUXILIAR.RazonSocial.ToLower().Contains(tbtBuscar.Text.ToLower()));
+                dgvCliente.DataSource = lista;
+            }
+
+        }
+
+        //private void btnBuscar_Click(object sender, EventArgs e)
+        //{
+        //    ClienteNegocio clienteNegocio = new ClienteNegocio();
+        //    try
+        //    {
+        //        dgvCliente.DataSource = clienteNegocio.buscarCliente(tbtBuscar.Text.Trim());
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show(ex.ToString());
+        //    }
+        //}
+
+
     }
 }

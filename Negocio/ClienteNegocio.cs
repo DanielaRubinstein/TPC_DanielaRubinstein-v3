@@ -77,7 +77,6 @@ namespace Negocio
 
         public void modificarCliente(Cliente cliente)
         {
-
             AccesoDatos accesoDatos = new AccesoDatos();
             try
             {
@@ -105,7 +104,44 @@ namespace Negocio
 
         }
 
+        public List<Cliente> buscarCliente(string RazonSocial)
+        {
+            List<Cliente> listaCliente = new List<Cliente>();
+            AccesoDatos accesoDatos = new AccesoDatos();
+            Cliente clienteaux;
 
+            try
+            {
+                accesoDatos.SetearConsulta("Select IdCliente, CUIL, RazonSocial, Direccion , Localidad, Contacto, Telefono, Mail from CLIENTES where RazonSocial LIKE'" + RazonSocial + "%'");
+                accesoDatos.AbrirConexion();
+                accesoDatos.ejecutarAccion();
+
+                while (accesoDatos.Lector.Read())
+                {
+                    clienteaux = new Cliente();
+                    clienteaux.IdEmpresa = (int)accesoDatos.Lector["IdCliente"];
+                    clienteaux.CUIL = accesoDatos.Lector["CUIL"].ToString();
+                    clienteaux.RazonSocial = accesoDatos.Lector["RazonSocial"].ToString();
+                    clienteaux.Direccion = accesoDatos.Lector["Direccion"].ToString();
+                    clienteaux.Localidad = accesoDatos.Lector["Localidad"].ToString();
+                    clienteaux.Contacto = accesoDatos.Lector["Contacto"].ToString();
+                    clienteaux.Telefono = accesoDatos.Lector["Telefono"].ToString();
+                    clienteaux.Mail = accesoDatos.Lector["Mail"].ToString();
+                    listaCliente.Add(clienteaux);
+                }
+                return listaCliente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+
+        }
 
 
 

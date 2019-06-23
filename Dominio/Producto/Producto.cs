@@ -18,12 +18,16 @@ namespace Dominio
         public int StockMinimo { get; set; }
         public int StockActual { get; set; }
        // public Medida Medida { get; set; }
-        public float PrecioNeto {get;set;}
-        public int Impuesto { get; set; }
-        public float PrecioFinal { get; set; }
-        public float CostoNeto { get; set; }
-        public float CostoSinIva { get; set; }
+        public decimal PrecioNeto {get;set;}
+        public decimal Impuesto { get; set; }
+        public decimal PrecioFinal { get; set; }
+        public decimal CostoNeto { get; set; }
+        public decimal CostoSinIva { get; set; }
+        public bool Estado { get; set; }
 
-
+        public override string ToString()
+        {
+            return IdProducto + "," + Descripcion + "," + Marca + "," + Categoria + "," + StockMinimo.ToString() + "," + StockActual.ToString() + "," + PrecioNeto.ToString() + "," + Impuesto.ToString() + "," + PrecioFinal.ToString() + "," + CostoNeto.ToString() + "," + CostoSinIva.ToString() + "," + Estado;
+        }
     }
 }

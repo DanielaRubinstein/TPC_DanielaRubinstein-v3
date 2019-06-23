@@ -110,7 +110,37 @@ namespace Negocio
 
         }
 
+        public List<Proveedor> listarRazonSocial()
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            List<Proveedor> listaRazonSocial = new List<Proveedor>();
 
+            try
+            {
+                accesoDatos.SetearConsulta("select RazonSocial from Proveedores where Estado=1");
+                accesoDatos.AbrirConexion();
+                while (accesoDatos.Lector.Read())
+                {
+                    Proveedor proveedoraux = new Proveedor(accesoDatos.Lector.GetString(3));
+                    listaRazonSocial.Add(proveedoraux);
+                }
+                return listaRazonSocial;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+                
+            }
+
+
+
+        }
 
 
 

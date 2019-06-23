@@ -48,6 +48,7 @@
             this.tbtBuscar.Name = "tbtBuscar";
             this.tbtBuscar.Size = new System.Drawing.Size(774, 47);
             this.tbtBuscar.TabIndex = 31;
+            this.tbtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbtBuscar_KeyPress);
             // 
             // lblEditar
             // 
@@ -111,12 +112,13 @@
             this.btnBuscar.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Enabled = false;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(1113, 49);
+            this.btnBuscar.Location = new System.Drawing.Point(1150, 60);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 62);
+            this.btnBuscar.Size = new System.Drawing.Size(40, 43);
             this.btnBuscar.TabIndex = 25;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
@@ -133,6 +135,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(65, 62);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 

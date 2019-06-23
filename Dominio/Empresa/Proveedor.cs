@@ -9,8 +9,15 @@ namespace Dominio
 {
     public class Proveedor: Empresa
     {
+        public Proveedor() { }
+        public Proveedor (string razonSocial)
+         {
+            RazonSocial = razonSocial;
+         }
        
 
     }
+
+
 
 }

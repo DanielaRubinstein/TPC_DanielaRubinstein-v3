@@ -36,30 +36,32 @@
             this.lblStockMin = new System.Windows.Forms.Label();
             this.lblStockActual = new System.Windows.Forms.Label();
             this.gbStock = new System.Windows.Forms.GroupBox();
+            this.txtStockActual = new System.Windows.Forms.TextBox();
+            this.txtStockMin = new System.Windows.Forms.TextBox();
             this.lblProfundidad = new System.Windows.Forms.Label();
             this.lblAlto = new System.Windows.Forms.Label();
             this.lblAncho = new System.Windows.Forms.Label();
             this.gbMedidas = new System.Windows.Forms.GroupBox();
             this.gbPrecios = new System.Windows.Forms.GroupBox();
+            this.txtPrecioFinal = new System.Windows.Forms.TextBox();
+            this.txtImpuesto = new System.Windows.Forms.TextBox();
+            this.txtPrecioNeto = new System.Windows.Forms.TextBox();
             this.lblImpuesto = new System.Windows.Forms.Label();
             this.lblPrecioNeto = new System.Windows.Forms.Label();
             this.lblPrecioFInal = new System.Windows.Forms.Label();
             this.gbCostos = new System.Windows.Forms.GroupBox();
+            this.txtCostoSIVA = new System.Windows.Forms.TextBox();
+            this.txtCostoNeto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbID = new System.Windows.Forms.TextBox();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.txtbProveedor = new System.Windows.Forms.TextBox();
-            this.txtbCategoria = new System.Windows.Forms.TextBox();
-            this.txtbMarca = new System.Windows.Forms.TextBox();
-            this.txtbDescripcion = new System.Windows.Forms.TextBox();
-            this.txtbStockActual = new System.Windows.Forms.TextBox();
-            this.txtbStockMin = new System.Windows.Forms.TextBox();
-            this.txtbPrecioNeto = new System.Windows.Forms.TextBox();
-            this.txtbImpuesto = new System.Windows.Forms.TextBox();
-            this.txtbPrecioFinal = new System.Windows.Forms.TextBox();
-            this.txtbCostoNeto = new System.Windows.Forms.TextBox();
-            this.txtbCostoSIVA = new System.Windows.Forms.TextBox();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbStock.SuspendLayout();
             this.gbMedidas.SuspendLayout();
             this.gbPrecios.SuspendLayout();
@@ -139,8 +141,8 @@
             // 
             // gbStock
             // 
-            this.gbStock.Controls.Add(this.txtbStockActual);
-            this.gbStock.Controls.Add(this.txtbStockMin);
+            this.gbStock.Controls.Add(this.txtStockActual);
+            this.gbStock.Controls.Add(this.txtStockMin);
             this.gbStock.Controls.Add(this.lblStockMin);
             this.gbStock.Controls.Add(this.lblStockActual);
             this.gbStock.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,6 +152,20 @@
             this.gbStock.TabIndex = 7;
             this.gbStock.TabStop = false;
             this.gbStock.Text = "STOCK";
+            // 
+            // txtStockActual
+            // 
+            this.txtStockActual.Location = new System.Drawing.Point(182, 122);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.Size = new System.Drawing.Size(372, 40);
+            this.txtStockActual.TabIndex = 14;
+            // 
+            // txtStockMin
+            // 
+            this.txtStockMin.Location = new System.Drawing.Point(182, 63);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(372, 40);
+            this.txtStockMin.TabIndex = 13;
             // 
             // lblProfundidad
             // 
@@ -197,9 +213,9 @@
             // 
             // gbPrecios
             // 
-            this.gbPrecios.Controls.Add(this.txtbPrecioFinal);
-            this.gbPrecios.Controls.Add(this.txtbImpuesto);
-            this.gbPrecios.Controls.Add(this.txtbPrecioNeto);
+            this.gbPrecios.Controls.Add(this.txtPrecioFinal);
+            this.gbPrecios.Controls.Add(this.txtImpuesto);
+            this.gbPrecios.Controls.Add(this.txtPrecioNeto);
             this.gbPrecios.Controls.Add(this.lblImpuesto);
             this.gbPrecios.Controls.Add(this.lblPrecioNeto);
             this.gbPrecios.Controls.Add(this.lblPrecioFInal);
@@ -210,6 +226,27 @@
             this.gbPrecios.TabIndex = 9;
             this.gbPrecios.TabStop = false;
             this.gbPrecios.Text = "PRECIOS";
+            // 
+            // txtPrecioFinal
+            // 
+            this.txtPrecioFinal.Location = new System.Drawing.Point(169, 202);
+            this.txtPrecioFinal.Name = "txtPrecioFinal";
+            this.txtPrecioFinal.Size = new System.Drawing.Size(372, 40);
+            this.txtPrecioFinal.TabIndex = 16;
+            // 
+            // txtImpuesto
+            // 
+            this.txtImpuesto.Location = new System.Drawing.Point(169, 129);
+            this.txtImpuesto.Name = "txtImpuesto";
+            this.txtImpuesto.Size = new System.Drawing.Size(372, 40);
+            this.txtImpuesto.TabIndex = 15;
+            // 
+            // txtPrecioNeto
+            // 
+            this.txtPrecioNeto.Location = new System.Drawing.Point(169, 61);
+            this.txtPrecioNeto.Name = "txtPrecioNeto";
+            this.txtPrecioNeto.Size = new System.Drawing.Size(372, 40);
+            this.txtPrecioNeto.TabIndex = 14;
             // 
             // lblImpuesto
             // 
@@ -243,8 +280,8 @@
             // 
             // gbCostos
             // 
-            this.gbCostos.Controls.Add(this.txtbCostoSIVA);
-            this.gbCostos.Controls.Add(this.txtbCostoNeto);
+            this.gbCostos.Controls.Add(this.txtCostoSIVA);
+            this.gbCostos.Controls.Add(this.txtCostoNeto);
             this.gbCostos.Controls.Add(this.label1);
             this.gbCostos.Controls.Add(this.label2);
             this.gbCostos.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,6 +291,20 @@
             this.gbCostos.TabIndex = 10;
             this.gbCostos.TabStop = false;
             this.gbCostos.Text = "COSTOS";
+            // 
+            // txtCostoSIVA
+            // 
+            this.txtCostoSIVA.Location = new System.Drawing.Point(169, 167);
+            this.txtCostoSIVA.Name = "txtCostoSIVA";
+            this.txtCostoSIVA.Size = new System.Drawing.Size(372, 40);
+            this.txtCostoSIVA.TabIndex = 18;
+            // 
+            // txtCostoNeto
+            // 
+            this.txtCostoNeto.Location = new System.Drawing.Point(169, 89);
+            this.txtCostoNeto.Name = "txtCostoNeto";
+            this.txtCostoNeto.Size = new System.Drawing.Size(372, 40);
+            this.txtCostoNeto.TabIndex = 17;
             // 
             // label1
             // 
@@ -281,13 +332,14 @@
             this.txtbID.Name = "txtbID";
             this.txtbID.Size = new System.Drawing.Size(372, 31);
             this.txtbID.TabIndex = 11;
+            this.txtbID.Visible = false;
             // 
             // gbDatos
             // 
-            this.gbDatos.Controls.Add(this.txtbProveedor);
-            this.gbDatos.Controls.Add(this.txtbCategoria);
-            this.gbDatos.Controls.Add(this.txtbMarca);
-            this.gbDatos.Controls.Add(this.txtbDescripcion);
+            this.gbDatos.Controls.Add(this.cmbProveedor);
+            this.gbDatos.Controls.Add(this.txtCategoria);
+            this.gbDatos.Controls.Add(this.txtMarca);
+            this.gbDatos.Controls.Add(this.txtDescripcion);
             this.gbDatos.Controls.Add(this.lblCategoria);
             this.gbDatos.Controls.Add(this.txtbID);
             this.gbDatos.Controls.Add(this.lblID);
@@ -301,88 +353,62 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "DATOS";
             // 
-            // txtbProveedor
+            // cmbProveedor
             // 
-            this.txtbProveedor.Location = new System.Drawing.Point(182, 291);
-            this.txtbProveedor.Name = "txtbProveedor";
-            this.txtbProveedor.Size = new System.Drawing.Size(372, 31);
-            this.txtbProveedor.TabIndex = 15;
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(182, 298);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(372, 33);
+            this.cmbProveedor.TabIndex = 15;
             // 
-            // txtbCategoria
+            // txtCategoria
             // 
-            this.txtbCategoria.Location = new System.Drawing.Point(182, 232);
-            this.txtbCategoria.Name = "txtbCategoria";
-            this.txtbCategoria.Size = new System.Drawing.Size(372, 31);
-            this.txtbCategoria.TabIndex = 14;
+            this.txtCategoria.Location = new System.Drawing.Point(182, 232);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(372, 31);
+            this.txtCategoria.TabIndex = 14;
             // 
-            // txtbMarca
+            // txtMarca
             // 
-            this.txtbMarca.Location = new System.Drawing.Point(182, 173);
-            this.txtbMarca.Name = "txtbMarca";
-            this.txtbMarca.Size = new System.Drawing.Size(372, 31);
-            this.txtbMarca.TabIndex = 13;
+            this.txtMarca.Location = new System.Drawing.Point(182, 173);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(372, 31);
+            this.txtMarca.TabIndex = 13;
             // 
-            // txtbDescripcion
+            // txtDescripcion
             // 
-            this.txtbDescripcion.Location = new System.Drawing.Point(182, 114);
-            this.txtbDescripcion.Name = "txtbDescripcion";
-            this.txtbDescripcion.Size = new System.Drawing.Size(372, 31);
-            this.txtbDescripcion.TabIndex = 12;
+            this.txtDescripcion.Location = new System.Drawing.Point(182, 114);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(372, 31);
+            this.txtDescripcion.TabIndex = 12;
             // 
-            // txtbStockActual
+            // btnAceptar
             // 
-            this.txtbStockActual.Location = new System.Drawing.Point(182, 122);
-            this.txtbStockActual.Name = "txtbStockActual";
-            this.txtbStockActual.Size = new System.Drawing.Size(372, 40);
-            this.txtbStockActual.TabIndex = 14;
+            this.btnAceptar.Location = new System.Drawing.Point(1075, 667);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(173, 45);
+            this.btnAceptar.TabIndex = 13;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txtbStockMin
+            // btnCancelar
             // 
-            this.txtbStockMin.Location = new System.Drawing.Point(182, 63);
-            this.txtbStockMin.Name = "txtbStockMin";
-            this.txtbStockMin.Size = new System.Drawing.Size(372, 40);
-            this.txtbStockMin.TabIndex = 13;
-            // 
-            // txtbPrecioNeto
-            // 
-            this.txtbPrecioNeto.Location = new System.Drawing.Point(169, 61);
-            this.txtbPrecioNeto.Name = "txtbPrecioNeto";
-            this.txtbPrecioNeto.Size = new System.Drawing.Size(372, 40);
-            this.txtbPrecioNeto.TabIndex = 14;
-            // 
-            // txtbImpuesto
-            // 
-            this.txtbImpuesto.Location = new System.Drawing.Point(169, 129);
-            this.txtbImpuesto.Name = "txtbImpuesto";
-            this.txtbImpuesto.Size = new System.Drawing.Size(372, 40);
-            this.txtbImpuesto.TabIndex = 15;
-            // 
-            // txtbPrecioFinal
-            // 
-            this.txtbPrecioFinal.Location = new System.Drawing.Point(169, 202);
-            this.txtbPrecioFinal.Name = "txtbPrecioFinal";
-            this.txtbPrecioFinal.Size = new System.Drawing.Size(372, 40);
-            this.txtbPrecioFinal.TabIndex = 16;
-            // 
-            // txtbCostoNeto
-            // 
-            this.txtbCostoNeto.Location = new System.Drawing.Point(169, 89);
-            this.txtbCostoNeto.Name = "txtbCostoNeto";
-            this.txtbCostoNeto.Size = new System.Drawing.Size(372, 40);
-            this.txtbCostoNeto.TabIndex = 17;
-            // 
-            // txtbCostoSIVA
-            // 
-            this.txtbCostoSIVA.Location = new System.Drawing.Point(169, 167);
-            this.txtbCostoSIVA.Name = "txtbCostoSIVA";
-            this.txtbCostoSIVA.Size = new System.Drawing.Size(372, 40);
-            this.txtbCostoSIVA.TabIndex = 18;
+            this.btnCancelar.Location = new System.Drawing.Point(861, 667);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(173, 45);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1377, 933);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.gbCostos);
             this.Controls.Add(this.gbPrecios);
@@ -390,6 +416,7 @@
             this.Controls.Add(this.gbStock);
             this.Name = "frmProducto";
             this.Text = "Formulario Producto";
+            this.Load += new System.EventHandler(this.frmProducto_Load);
             this.gbStock.ResumeLayout(false);
             this.gbStock.PerformLayout();
             this.gbMedidas.ResumeLayout(false);
@@ -427,16 +454,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtbID;
         private System.Windows.Forms.GroupBox gbDatos;
-        private System.Windows.Forms.TextBox txtbProveedor;
-        private System.Windows.Forms.TextBox txtbCategoria;
-        private System.Windows.Forms.TextBox txtbMarca;
-        private System.Windows.Forms.TextBox txtbDescripcion;
-        private System.Windows.Forms.TextBox txtbStockActual;
-        private System.Windows.Forms.TextBox txtbStockMin;
-        private System.Windows.Forms.TextBox txtbPrecioFinal;
-        private System.Windows.Forms.TextBox txtbImpuesto;
-        private System.Windows.Forms.TextBox txtbPrecioNeto;
-        private System.Windows.Forms.TextBox txtbCostoSIVA;
-        private System.Windows.Forms.TextBox txtbCostoNeto;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtStockActual;
+        private System.Windows.Forms.TextBox txtStockMin;
+        private System.Windows.Forms.TextBox txtPrecioFinal;
+        private System.Windows.Forms.TextBox txtImpuesto;
+        private System.Windows.Forms.TextBox txtPrecioNeto;
+        private System.Windows.Forms.TextBox txtCostoSIVA;
+        private System.Windows.Forms.TextBox txtCostoNeto;
+        private System.Windows.Forms.ComboBox cmbProveedor;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

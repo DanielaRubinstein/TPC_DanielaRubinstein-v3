@@ -35,14 +35,16 @@
             this.lblEliminar = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(12, 118);
             this.dgvProductos.Name = "dgvProductos";
@@ -57,6 +59,7 @@
             this.tbtBuscar.Name = "tbtBuscar";
             this.tbtBuscar.Size = new System.Drawing.Size(774, 47);
             this.tbtBuscar.TabIndex = 30;
+            this.tbtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbtBuscar_KeyPress);
             // 
             // lblEditar
             // 
@@ -106,20 +109,6 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(1113, 44);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 62);
-            this.btnBuscar.TabIndex = 25;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -133,6 +122,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(65, 62);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -150,18 +140,33 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Enabled = false;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(1150, 57);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 43);
+            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // frmListaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1982, 1079);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tbtBuscar);
             this.Controls.Add(this.lblEditar);
             this.Controls.Add(this.lblEliminar);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductos);
@@ -171,6 +176,7 @@
             this.Name = "frmListaProducto";
             this.Text = "Producto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmListaProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,8 +190,8 @@
         private System.Windows.Forms.Label lblEliminar;
         private System.Windows.Forms.Label lblAgregar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

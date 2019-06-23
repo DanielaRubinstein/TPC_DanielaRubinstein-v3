@@ -17,6 +17,5 @@ namespace Dominio
         public List<DetalleFactura> DetalleFactura { get; set; }
         public int Descuento { get; set; } //En el detalle o factura?
         public float Total { get; set; }
-
     }
 }

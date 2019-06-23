@@ -34,10 +34,10 @@
             this.lblAgregar = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,20 +103,6 @@
             this.dgvProveedor.Size = new System.Drawing.Size(1958, 957);
             this.dgvProveedor.TabIndex = 15;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(1113, 41);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 62);
-            this.btnBuscar.TabIndex = 14;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -155,6 +141,22 @@
             this.tbtBuscar.Name = "tbtBuscar";
             this.tbtBuscar.Size = new System.Drawing.Size(774, 47);
             this.tbtBuscar.TabIndex = 22;
+            this.tbtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbtBuscar_KeyPress);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Enabled = false;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(1148, 54);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 43);
+            this.btnBuscar.TabIndex = 26;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // frmListaProveedor
             // 
@@ -162,13 +164,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1982, 1079);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tbtBuscar);
             this.Controls.Add(this.lblEditar);
             this.Controls.Add(this.lblEliminar);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvProveedor);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.IsMdiContainer = true;
@@ -190,9 +192,9 @@
         private System.Windows.Forms.Label lblAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridView dgvProveedor;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox tbtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

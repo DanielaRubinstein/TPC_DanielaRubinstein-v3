@@ -29,8 +29,10 @@ namespace Presentacion
 
         private void frmCliente_Load(object Sender, EventArgs e)
         {
-            if (cliente != null)
-            {
+            try
+            { 
+               if (cliente != null)
+              {
                 txtCUIL.Text = cliente.CUIL;
                 txtRazonSocial.Text = cliente.RazonSocial;
                 txtDireccion.Text = cliente.Direccion;
@@ -39,6 +41,11 @@ namespace Presentacion
                 txtTelefono.Text = cliente.Telefono;
                 txtMail.Text = cliente.Mail;
                 modificado = true;
+               }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 

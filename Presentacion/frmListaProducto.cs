@@ -7,39 +7,100 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace Presentacion
 {
     public partial class frmListaProducto : Form
     {
+        private List<Producto> productoListado;
+
         public frmListaProducto()
         {
             InitializeComponent();
+        }
+
+        private void cargarGrilla()
+        {
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            try
+            {
+                productoListado = productoNegocio.listar();
+                dgvProductos.DataSource = productoListado;
+                dgvProductos.Columns[12].Visible = false; //Estado
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmProducto formularioProducto = new frmProducto();
             formularioProducto.ShowDialog();
+            cargarGrilla();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmProducto formularioProducto = new frmProducto();
-            formularioProducto.ShowDialog();
+            try
+            {
+                frmProducto productoModificar = new frmProducto((Producto)dgvProductos.CurrentRow.DataBoundItem);
+                productoModificar.ShowDialog();
+                cargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         private void frmListaProducto_Load(object sender, EventArgs e)
         {
-            cargar();
+            cargarGrilla();
         }
 
-        private void cargar()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //AGREGAR PRODUCTONEGOCIO
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            Producto producto = new Producto();
+
+            try
+            {
+                DialogResult resultado = MessageBox.Show("Esta seguro que desea eliminar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    producto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                    producto.Estado = false;
+                    productoNegocio.eliminarProducto(producto);
+                    cargarGrilla();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
         }
 
+        private void tbtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbtBuscar.Text == "")
+            {
+                dgvProductos.DataSource = productoListado;
+            }
+            else
+            {
+                List<Producto> lista;
+                lista = productoListado.FindAll(AUXILIAR => AUXILIAR.Descripcion.ToLower().Contains(tbtBuscar.Text.ToLower()));
+                dgvProductos.DataSource = lista;
+            }
 
-
+        }
     }
 }

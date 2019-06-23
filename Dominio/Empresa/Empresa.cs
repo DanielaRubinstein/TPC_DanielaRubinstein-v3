@@ -18,25 +18,29 @@ namespace Dominio
         public string Mail { get; set; }
         public bool Estado { get; set; }
 
-        //public Empresa()
-        //{
-        //    this.Direccion = new Direccion();
-        //}
-        //public Empresa(int id)
-        //{
-        //    IdEmpresa = id;
-        //}
-
-        //public Empresa(string cuil, string razonSocial, int id)
-        //{
-        //    CUIL = cuil;
-        //    RazonSocial = razonSocial;
-        //    IdEmpresa = id;
-        //}
-
         public override string ToString()
         {
-          return IdEmpresa + "," + CUIL + "," + RazonSocial + "," + Direccion + "," + Localidad + "," + Contacto + "," + Telefono + "," + Mail + "," + Estado;
+            //return IdEmpresa + "," + CUIL + "," + RazonSocial + "," + Direccion + "," + Localidad + "," + Contacto + "," + Telefono + "," + Mail + "," + Estado;
+            return RazonSocial;
         }
+
+
+        //public void proveedor(string razonSocial)
+        //{
+        //    RazonSocial = razonSocial;
+        //}
+
+        //public string razonSocial
+        //{
+        //    set
+        //    {
+        //        RazonSocial = value;
+        //        cmbRazonSocial = ToString();
+        //    }
+        //    get { return RazonSocial; }
+        //}
+
+        //public string cmbRazonSocial { get; set; }
     }
+
 }

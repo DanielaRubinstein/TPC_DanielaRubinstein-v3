@@ -59,7 +59,6 @@ namespace Presentacion
         {
             try
             {
-
                 frmProveedor proveedorModificar = new frmProveedor((Proveedor)dgvProveedor.CurrentRow.DataBoundItem);
                 proveedorModificar.ShowDialog();
                 cargarGrilla();
@@ -91,6 +90,21 @@ namespace Presentacion
             {
                 throw ex;
 
+            }
+
+        }
+
+        private void tbtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbtBuscar.Text == "")
+            {
+                dgvProveedor.DataSource = proveedorListado;
+            }
+            else
+            {
+                List<Proveedor> lista;
+                lista = proveedorListado.FindAll(AUXILIAR => AUXILIAR.RazonSocial.ToLower().Contains(tbtBuscar.Text.ToLower()));
+                dgvProveedor.DataSource = lista;
             }
 
         }
