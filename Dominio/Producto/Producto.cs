@@ -24,10 +24,11 @@ namespace Dominio
         public decimal CostoNeto { get; set; }
         public decimal CostoSinIva { get; set; }
         public bool Estado { get; set; }
+        public string Imagen { get; set; }
 
         public override string ToString()
         {
-            return IdProducto + "," + Descripcion + "," + Marca + "," + Categoria + "," + StockMinimo.ToString() + "," + StockActual.ToString() + "," + PrecioNeto.ToString() + "," + Impuesto.ToString() + "," + PrecioFinal.ToString() + "," + CostoNeto.ToString() + "," + CostoSinIva.ToString() + "," + Estado;
+            return IdProducto + "," + Descripcion + "," + Marca + "," + Categoria + "," + StockMinimo.ToString() + "," + StockActual.ToString() + "," + PrecioNeto.ToString() + "," + Impuesto.ToString() + "," + PrecioFinal.ToString() + "," + CostoNeto.ToString() + "," + CostoSinIva.ToString() + "," + Estado + "," + Imagen.ToString();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Negocio
             try
             {
                 accesoDatos.SetearConsulta("Select IdProducto,Descripcion,Marca,Categoria,Proveedores.RazonSocial," +
-                "StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal, CostoNeto, CostoSinIva, productos.Estado from PRODUCTOS " +
+                "StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal, CostoNeto, CostoSinIva,Imagen, productos.Estado from PRODUCTOS " +
                 "inner join Proveedores on Productos.IdProveedor = Proveedores.IdProveedor where productos.Estado = 1");
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarConsulta();
@@ -43,7 +43,7 @@ namespace Negocio
                     producto.CostoSinIva = (decimal)accesoDatos.Lector["CostoSinIva"];
                     producto.Proveedor = new Proveedor();
                     producto.Proveedor.RazonSocial = accesoDatos.Lector["RazonSocial"].ToString();
-                    
+                    producto.Imagen = accesoDatos.Lector["Imagen"].ToString();
                     lista.Add(producto);
                 }
                 return lista;
@@ -63,7 +63,7 @@ namespace Negocio
             AccesoDatos accesoDatos = new AccesoDatos();
             try
             {
-                accesoDatos.SetearConsulta("update PRODUCTOS set Descripcion=@Descripcion,Marca=@Marca,Categoria=@Categoria,StockMinimo=@StockMinimo,StockActual=@StockActual,PrecioNeto=@PrecioNeto,Impuesto=@Impuesto,PrecioFinal=@PrecioFinal,CostoNeto=@CostoNeto,CostoSinIva=@CostoSinIva,IdProveedor=@IdProveedor, Estado=@Estado where IdProducto="+ productoModificado.IdProducto);
+                accesoDatos.SetearConsulta("update PRODUCTOS set Descripcion=@Descripcion,Marca=@Marca,Categoria=@Categoria,StockMinimo=@StockMinimo,StockActual=@StockActual,PrecioNeto=@PrecioNeto,Impuesto=@Impuesto,PrecioFinal=@PrecioFinal,CostoNeto=@CostoNeto,CostoSinIva=@CostoSinIva,IdProveedor=@IdProveedor, Estado=@Estado, Imagen=@Imagen where IdProducto="+ productoModificado.IdProducto);
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Descripcion",productoModificado.Descripcion);
                 accesoDatos.Comando.Parameters.AddWithValue("@Marca",productoModificado.Marca);
@@ -77,6 +77,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@CostoSinIva", productoModificado.CostoSinIva);
                 accesoDatos.Comando.Parameters.AddWithValue("@IdProveedor", productoModificado.Proveedor.IdEmpresa); //combobox
                 accesoDatos.Comando.Parameters.AddWithValue("@Estado", productoModificado.Estado);
+                accesoDatos.Comando.Parameters.AddWithValue("@Imagen", productoModificado.Imagen);
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarAccion();
             }
@@ -123,7 +124,7 @@ namespace Negocio
                 //consulta = "insert into PRODUCTOS (Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado)";
                 //consulta = consulta + "values('"+ productoNuevo.Descripcion + "','" + productoNuevo.Marca +"','"+ productoNuevo.Categoria + "','"+productoNuevo.StockMinimo   ")";
                 accesoDatos = new AccesoDatos();
-                accesoDatos.SetearConsulta("insert into PRODUCTOS (Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado) values (@Descripcion,@Marca,@Categoria,@StockMinimo,@StockActual,@PrecioNeto,@Impuesto,@PrecioFinal,@CostoNeto,@CostoSinIva,@IdProveedor,1)");
+                accesoDatos.SetearConsulta("insert into PRODUCTOS (Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado,Imagen) values (@Descripcion,@Marca,@Categoria,@StockMinimo,@StockActual,@PrecioNeto,@Impuesto,@PrecioFinal,@CostoNeto,@CostoSinIva,@IdProveedor,1, @Imagen)");
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Descripcion", productoNuevo.Descripcion);
                 accesoDatos.Comando.Parameters.AddWithValue("@Marca", productoNuevo.Marca);
@@ -137,6 +138,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@CostoSinIva", productoNuevo.CostoSinIva);
                 accesoDatos.Comando.Parameters.AddWithValue("@IdProveedor", productoNuevo.Proveedor.IdEmpresa);
                 accesoDatos.Comando.Parameters.AddWithValue("@Estado", productoNuevo.Estado);
+                accesoDatos.Comando.Parameters.AddWithValue("@Imagen", productoNuevo.Imagen);
 
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarAccion();
@@ -160,9 +162,6 @@ namespace Negocio
 
 
 
-
-
-
-
+       
     }
 }

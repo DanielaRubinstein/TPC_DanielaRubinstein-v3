@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIdCliente = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
@@ -50,16 +49,6 @@
             this.gbDireccion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.Location = new System.Drawing.Point(165, 61);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(48, 36);
-            this.lblIdCliente.TabIndex = 0;
-            this.lblIdCliente.Text = "ID:";
             // 
             // lblCuit
             // 
@@ -246,7 +235,6 @@
             this.Controls.Add(this.txtRazonSocial);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCuit);
-            this.Controls.Add(this.lblIdCliente);
             this.MaximumSize = new System.Drawing.Size(1694, 939);
             this.MinimumSize = new System.Drawing.Size(713, 939);
             this.Name = "frmCliente";
@@ -262,8 +250,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRazonSocial;

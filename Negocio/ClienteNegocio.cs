@@ -61,6 +61,7 @@ namespace Negocio
                 accesoDatos.AbrirConexion();
                 accesoDatos.ejecutarAccion();
 
+
             }
             catch (Exception ex)
             {

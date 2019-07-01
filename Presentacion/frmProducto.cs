@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using Dominio;
 using Negocio;
 
@@ -16,6 +17,7 @@ namespace Presentacion
     {
         private Producto producto = null;
         bool modificado = false;
+        string imgLocation = "";
         public frmProducto()
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace Presentacion
                 txtPrecioFinal.Text = producto.PrecioFinal.ToString();
                 txtCostoNeto.Text = producto.CostoNeto.ToString();
                 txtCostoSIVA.Text = producto.CostoSinIva.ToString();
+                pbProducto.ImageLocation = producto.Imagen;
                 modificado = true;
                  }
             }
@@ -87,6 +90,7 @@ namespace Presentacion
                         producto.PrecioFinal = decimal.Parse(txtPrecioFinal.Text);
                         producto.CostoNeto = decimal.Parse(txtCostoNeto.Text);
                         producto.CostoSinIva = decimal.Parse(txtCostoSIVA.Text);
+                        producto.Imagen = imgLocation.ToString();
                      }
 
                     if (producto.IdProducto!=0 && modificado==true)
@@ -102,6 +106,7 @@ namespace Presentacion
                         producto.PrecioFinal = decimal.Parse(txtPrecioFinal.Text);
                         producto.CostoNeto = decimal.Parse(txtCostoNeto.Text);
                         producto.CostoSinIva = decimal.Parse(txtCostoSIVA.Text);
+                        producto.Imagen = imgLocation.ToString();
                         producto.Estado = true;
 
                         productoNegocio.modificarProducto(producto);
@@ -124,6 +129,18 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if(dialog.ShowDialog()==DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                pbProducto.ImageLocation = imgLocation;
+            }
+
         }
     }
 }

@@ -37,7 +37,6 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
-            this.lblIdCliente = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblIdProveedor = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -133,17 +132,6 @@
             this.lblCuit.Size = new System.Drawing.Size(76, 36);
             this.lblCuit.TabIndex = 18;
             this.lblCuit.Text = "CUIL:";
-            // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Enabled = false;
-            this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.Location = new System.Drawing.Point(220, 122);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(48, 36);
-            this.lblIdCliente.TabIndex = 23;
-            this.lblIdCliente.Text = "ID:";
             // 
             // btnAceptar
             // 
@@ -252,7 +240,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblIdProveedor);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.txtCUIL);
             this.Controls.Add(this.gbDireccion);
             this.Controls.Add(this.txtRazonSocial);
@@ -279,7 +266,6 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtLocalidad;
         private System.Windows.Forms.Label lblIdProveedor;

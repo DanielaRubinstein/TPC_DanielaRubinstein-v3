@@ -47,7 +47,7 @@
             // 
             this.lblVenta.AutoSize = true;
             this.lblVenta.Font = new System.Drawing.Font("Calibri", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVenta.Location = new System.Drawing.Point(1485, 459);
+            this.lblVenta.Location = new System.Drawing.Point(1200, 457);
             this.lblVenta.Name = "lblVenta";
             this.lblVenta.Size = new System.Drawing.Size(106, 45);
             this.lblVenta.TabIndex = 23;
@@ -61,7 +61,7 @@
             this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVenta.FlatAppearance.BorderSize = 0;
             this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVenta.Location = new System.Drawing.Point(1462, 284);
+            this.btnVenta.Location = new System.Drawing.Point(1179, 284);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(129, 138);
             this.btnVenta.TabIndex = 22;
@@ -71,11 +71,12 @@
             // 
             this.lblCompra.AutoSize = true;
             this.lblCompra.Font = new System.Drawing.Font("Calibri", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompra.Location = new System.Drawing.Point(1189, 458);
+            this.lblCompra.Location = new System.Drawing.Point(908, 457);
             this.lblCompra.Name = "lblCompra";
             this.lblCompra.Size = new System.Drawing.Size(139, 45);
             this.lblCompra.TabIndex = 21;
             this.lblCompra.Text = "Compra";
+            this.lblCompra.Visible = false;
             // 
             // btnCompra
             // 
@@ -85,18 +86,19 @@
             this.btnCompra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompra.FlatAppearance.BorderSize = 0;
             this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompra.Location = new System.Drawing.Point(1190, 284);
+            this.btnCompra.Location = new System.Drawing.Point(911, 284);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(129, 138);
             this.btnCompra.TabIndex = 20;
             this.btnCompra.UseVisualStyleBackColor = false;
+            this.btnCompra.Visible = false;
             this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
             // 
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
             this.lblProveedor.Font = new System.Drawing.Font("Calibri", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedor.Location = new System.Drawing.Point(910, 457);
+            this.lblProveedor.Location = new System.Drawing.Point(632, 457);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(176, 45);
             this.lblProveedor.TabIndex = 19;
@@ -110,7 +112,7 @@
             this.btnProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedor.FlatAppearance.BorderSize = 0;
             this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedor.Location = new System.Drawing.Point(918, 285);
+            this.btnProveedor.Location = new System.Drawing.Point(643, 284);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(129, 138);
             this.btnProveedor.TabIndex = 18;
@@ -121,7 +123,7 @@
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Calibri", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(653, 459);
+            this.lblCliente.Location = new System.Drawing.Point(371, 457);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(123, 45);
             this.lblCliente.TabIndex = 17;
@@ -135,7 +137,7 @@
             this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCliente.FlatAppearance.BorderSize = 0;
             this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliente.Location = new System.Drawing.Point(646, 285);
+            this.btnCliente.Location = new System.Drawing.Point(375, 284);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(129, 138);
             this.btnCliente.TabIndex = 16;
@@ -146,7 +148,7 @@
             // 
             this.lblFactura.AutoSize = true;
             this.lblFactura.Font = new System.Drawing.Font("Calibri", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFactura.Location = new System.Drawing.Point(372, 459);
+            this.lblFactura.Location = new System.Drawing.Point(1447, 457);
             this.lblFactura.Name = "lblFactura";
             this.lblFactura.Size = new System.Drawing.Size(131, 45);
             this.lblFactura.TabIndex = 15;
@@ -160,7 +162,7 @@
             this.btnFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFactura.FlatAppearance.BorderSize = 0;
             this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactura.Location = new System.Drawing.Point(374, 284);
+            this.btnFactura.Location = new System.Drawing.Point(1447, 284);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(129, 138);
             this.btnFactura.TabIndex = 14;

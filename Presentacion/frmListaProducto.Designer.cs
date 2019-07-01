@@ -49,6 +49,7 @@
             this.dgvProductos.Location = new System.Drawing.Point(12, 118);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowTemplate.Height = 33;
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1958, 957);
             this.dgvProductos.TabIndex = 3;
             // 

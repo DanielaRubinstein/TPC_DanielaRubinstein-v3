@@ -29,6 +29,7 @@ namespace Presentacion
                 productoListado = productoNegocio.listar();
                 dgvProductos.DataSource = productoListado;
                 dgvProductos.Columns[12].Visible = false; //Estado
+                dgvProductos.Columns[13].Visible = false; //Imagen
             }
             catch (Exception ex)
             {
@@ -45,8 +46,13 @@ namespace Presentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            Producto producto = new Producto();
+            
             try
             {
+                producto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                string p = producto.Imagen;
+
                 frmProducto productoModificar = new frmProducto((Producto)dgvProductos.CurrentRow.DataBoundItem);
                 productoModificar.ShowDialog();
                 cargarGrilla();
@@ -84,8 +90,6 @@ namespace Presentacion
 
                 throw ex;
             }
-
-
         }
 
         private void tbtBuscar_KeyPress(object sender, KeyPressEventArgs e)

@@ -100,6 +100,7 @@
             this.dgvProveedor.Location = new System.Drawing.Point(12, 114);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.RowTemplate.Height = 33;
+            this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedor.Size = new System.Drawing.Size(1958, 957);
             this.dgvProveedor.TabIndex = 15;
             // 
