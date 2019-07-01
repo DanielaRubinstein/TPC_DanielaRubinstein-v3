@@ -83,14 +83,30 @@ inner join Proveedores on Productos.IdProveedor = Proveedores.IdProveedor where 
 
 
 --INSERTS
-insert into Productos (Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado,Imagen) 
-values ('producto1','producto1','producto1',1,1,1,1,1,1,1,1,1,'https://media.brandalley.com/img_rayons/1600x1600/2019/03/22/258/3119258_2.jpg')
+insert into Proveedores (CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado) 
+values ('2333345','Tsu','Cabildo 2345','Belgrano','Fernando Ruiz','45479849','fruiz@tsu.com.ar',1)
+insert into Proveedores (CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado) 
+values ('2144490','Hush Puppies','Agustin Alvarez 450','Vicente Lopez','Pilar Mendez','15983900','pmendez@hpuppies.com',1)
+insert into Proveedores (CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado) 
+values ('2300021','Importadora Sud','Entre Rios 223','San Isidro','Juan Platz','1109894952','jplatz@import.com.ar',0)
 
-insert into Proveedores (CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado,Imagen) 
-values ('3','prueba3','prueba3','prueba3','prueba3','3','prueba3',1,'')
-insert into Proveedores (CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado,Imagen) 
-values ('4','proveedor4','proveedor4','proveedor4','proveedor4','4','proveedor4',1,'')
+insert into Clientes(CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado)
+values('28333045','Zapateria Gonzalez','Pueyrredon 1333','Palermo','Belen Diaz','1123490879','Zapateriagon@gmail.com',1)
+insert into Clientes(CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado)
+values('3200944','Valeria Artz','Melendez 3455','Don Torcuato','Valeria','1167894500','valeartz@gmail.com',1)
+insert into Clientes(CUIL,RazonSocial,Direccion,Localidad,Contacto,Telefono,Mail,Estado)
+values('20403000','Miguel Felicce','Triunvirato 302','Tortuguitas','Miguel','02320492049','miguelfelicce@gmail.com',0)
+
+insert into Productos (Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado,Imagen) 
+values ('Zapatilla Old Skool Madder','Vans','Mujer',1,3,4049,21,4900,1200,1452,1,1,'https://media.brandalley.com/img_rayons/1600x1600/2019/03/22/258/3119258_2.jpg')
+insert into Productos(Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado,Imagen)
+values('Zapatilla Heathrow Vulc','DC','Unisex',0,0,4500,21,5500,1200,1452,1,1,'https://www.xtremeinn.com/f/13673/136737881/dc-shoes-heathrow-vulc-se.jpg')
+insert into Productos(Descripcion,Marca,Categoria,StockMinimo,StockActual,PrecioNeto,Impuesto,PrecioFinal,CostoNeto,CostoSinIva,IdProveedor,Estado,Imagen)
+values('Zapatilla Sk8 Led Zeppelin','Vans','Hombre',1,3,6000,21,7260,1800,2178,2,1,'https://images.vans.com/is/image/VansEU/VN0A38GET5Z-HERO?$PDP-FULL-IMAGE$')
+
+
 
 
 
 --UPDATES
+
